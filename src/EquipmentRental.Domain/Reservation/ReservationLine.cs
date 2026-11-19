@@ -16,7 +16,7 @@ public sealed record ReservationLine
 
     public static Result<ReservationLine> Create(ProductId productId, uint quantity)
     {
-        if (quantity <= 1)
+        if (quantity < 1)
             return ReservationErrors.QuantityMustBeMoreThanZero;
 
         return new ReservationLine(productId, quantity);

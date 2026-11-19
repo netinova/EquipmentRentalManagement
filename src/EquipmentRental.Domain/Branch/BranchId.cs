@@ -2,7 +2,7 @@ using EquipmentRental.Domain.Common;
 
 namespace EquipmentRental.Domain.Branch;
 
-public record BranchId
+public sealed record BranchId
 {
     public Guid Id { get; }
 

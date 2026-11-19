@@ -2,9 +2,7 @@ namespace EquipmentRental.Domain.EquipmentUnit;
 
 public enum OperationalStatus
 {
-    Available,
-    Reserved,
-    Rented,
+    InService,
     UnderMaintenance,
     Retired
 }
