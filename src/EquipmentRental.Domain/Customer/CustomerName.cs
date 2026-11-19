@@ -4,8 +4,8 @@ namespace EquipmentRental.Domain.Customer;
 
 public sealed record CustomerName
 {
-    public string FirstName { get; }
-    public string LastName { get; }
+    public string FirstName { get; init; }
+    public string LastName { get; init; }
 
     private CustomerName(string firstName, string lastName)
     {
