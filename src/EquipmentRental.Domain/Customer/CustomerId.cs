@@ -4,7 +4,7 @@ namespace EquipmentRental.Domain.Customer;
 
 public sealed record CustomerId
 {
-    public Guid Id { get; init; }
+    public Guid Id { get; }
 
     private CustomerId(Guid id) => Id = id;
 

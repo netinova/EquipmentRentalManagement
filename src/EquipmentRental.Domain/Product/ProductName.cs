@@ -4,7 +4,7 @@ namespace EquipmentRental.Domain.Product;
 
 public sealed record ProductName
 {
-    public string Name { get; init; }
+    public string Name { get; }
 
     private ProductName(string name) => Name = name;
 

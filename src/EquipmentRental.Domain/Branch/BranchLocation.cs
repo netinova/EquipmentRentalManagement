@@ -4,7 +4,7 @@ namespace EquipmentRental.Domain.Branch;
 
 public record BranchLocation
 {
-    public string City { get; init; }
+    public string City { get; }
 
     private BranchLocation(string city) => City = city;
 

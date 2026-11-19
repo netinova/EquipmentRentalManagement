@@ -4,7 +4,7 @@ namespace EquipmentRental.Domain.Branch;
 
 public record BranchId
 {
-    public Guid Id { get; init; }
+    public Guid Id { get; }
 
     private BranchId(Guid id) => Id = id;
 
