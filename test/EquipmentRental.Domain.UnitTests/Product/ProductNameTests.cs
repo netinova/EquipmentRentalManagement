@@ -23,7 +23,7 @@ public class ProductNameTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData("   ")]
-    public void Create_ShouldFail_WithInvalidFirstName(string? name)
+    public void Create_ShouldFail_WithInvalidName(string? name)
     {
         // Act
         var result = ProductName.Create(name);
