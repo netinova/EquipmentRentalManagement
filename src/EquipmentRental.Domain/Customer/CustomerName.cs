@@ -13,7 +13,7 @@ public sealed record CustomerName
         LastName = lastName;
     }
 
-    public static Result<CustomerName> Create(string firstName, string lastName)
+    public static Result<CustomerName> Create(string? firstName, string? lastName)
     {
         if (string.IsNullOrWhiteSpace(firstName))
             return CustomerErrors.FirstNameRequired;

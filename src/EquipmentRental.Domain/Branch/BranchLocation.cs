@@ -8,7 +8,7 @@ public record BranchLocation
 
     private BranchLocation(string city) => City = city;
 
-    public static Result<BranchLocation> Create(string city)
+    public static Result<BranchLocation> Create(string? city)
     {
         if (string.IsNullOrWhiteSpace(city))
             return BranchErrors.CityRequired;

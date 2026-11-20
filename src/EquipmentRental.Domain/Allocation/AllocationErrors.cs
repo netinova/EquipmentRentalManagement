@@ -1,6 +1,6 @@
 using EquipmentRental.Domain.Common;
 
-namespace EquipmentRental.Domain.Reservation;
+namespace EquipmentRental.Domain.Allocation;
 
 public static class AllocationErrors
 {

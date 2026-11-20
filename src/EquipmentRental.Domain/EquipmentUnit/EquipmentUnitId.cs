@@ -8,11 +8,11 @@ public sealed record EquipmentUnitId
 
     private EquipmentUnitId(Guid id) => Id = id;
 
-    public static Result<EquipmentUnitId> Create(Guid id)
+    public static Result<EquipmentUnitId> Create(Guid? id)
     {
-        if (id == Guid.Empty)
+        if (id is not { } value || value == Guid.Empty)
             return EquipmentUnitErrors.IdRequired;
 
-        return new EquipmentUnitId(id);
+        return new EquipmentUnitId(value);
     }
 }

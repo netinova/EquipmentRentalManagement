@@ -8,11 +8,11 @@ public sealed record CustomerId
 
     private CustomerId(Guid id) => Id = id;
 
-    public static Result<CustomerId> Create(Guid id)
+    public static Result<CustomerId> Create(Guid? id)
     {
-        if (id == Guid.Empty)
+        if (id is not { } value || value == Guid.Empty)
             return CustomerErrors.IdRequired;
 
-        return new CustomerId(id);
+        return new CustomerId(value);
     }
 }

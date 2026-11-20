@@ -14,11 +14,17 @@ public sealed record ReservationLine
         Quantity = quantity;
     }
 
-    public static Result<ReservationLine> Create(ProductId productId, uint quantity)
+    public static Result<ReservationLine> Create(ProductId? productId, uint? quantity)
     {
-        if (quantity < 1)
+        if (productId is not { } productIdValue)
+            return ReservationErrors.ProductIdRequired;
+
+        if (quantity is not { } quantityValue)
+            return ReservationErrors.QuantityRequired;
+
+        if (quantityValue < 1)
             return ReservationErrors.QuantityMustBeMoreThanZero;
 
-        return new ReservationLine(productId, quantity);
+        return new ReservationLine(productIdValue, quantityValue);
     }
 }

@@ -8,11 +8,11 @@ public sealed record BranchId
 
     private BranchId(Guid id) => Id = id;
 
-    public static Result<BranchId> Create(Guid id)
+    public static Result<BranchId> Create(Guid? id)
     {
-        if (id == Guid.Empty)
+        if (id is not { } value || value == Guid.Empty)
             return BranchErrors.IdRequired;
 
-        return new BranchId(id);
+        return new BranchId(value);
     }
 };

@@ -1,8 +1,9 @@
 using EquipmentRental.Domain.EquipmentUnit;
+using EquipmentRental.Domain.Reservation;
 
-namespace EquipmentRental.Domain.Reservation;
+namespace EquipmentRental.Domain.Allocation;
 
-public sealed class Allocation
+internal sealed class Allocation
 {
     public AllocationId AllocationId { get; private set; }
     public EquipmentUnitId EquipmentUnitId { get; private set; }

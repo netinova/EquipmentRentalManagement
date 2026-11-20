@@ -8,7 +8,7 @@ public sealed record ProductName
 
     private ProductName(string name) => Name = name;
 
-    public static Result<ProductName> Create(string name)
+    public static Result<ProductName> Create(string? name)
     {
         if (string.IsNullOrWhiteSpace(name))
             return ProductErrors.NameRequired;

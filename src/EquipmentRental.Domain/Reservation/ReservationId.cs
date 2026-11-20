@@ -8,11 +8,11 @@ public sealed record ReservationId
 
     private ReservationId(Guid id) => Id = id;
 
-    public static Result<ReservationId> Create(Guid id)
+    public static Result<ReservationId> Create(Guid? id)
     {
-        if (id == Guid.Empty)
+        if (id is not { } value || value == Guid.Empty)
             return ReservationErrors.IdRequired;
 
-        return new ReservationId(id);
+        return new ReservationId(value);
     }
 }

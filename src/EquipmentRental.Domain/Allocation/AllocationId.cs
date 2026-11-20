@@ -1,6 +1,6 @@
 using EquipmentRental.Domain.Common;
 
-namespace EquipmentRental.Domain.Reservation;
+namespace EquipmentRental.Domain.Allocation;
 
 public sealed record AllocationId
 {
@@ -8,11 +8,11 @@ public sealed record AllocationId
 
     private AllocationId(Guid id) => Id = id;
 
-    public static Result<AllocationId> Create(Guid id)
+    public static Result<AllocationId> Create(Guid? id)
     {
-        if (id == Guid.Empty)
+        if (id is not { } value || value == Guid.Empty)
             return AllocationErrors.IdRequired;
 
-        return new AllocationId(id);
+        return new AllocationId(value);
     }
 }
