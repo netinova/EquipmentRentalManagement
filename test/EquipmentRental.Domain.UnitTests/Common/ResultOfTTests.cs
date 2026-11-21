@@ -69,4 +69,17 @@ public class ResultOfTTests
         // Assert
         act.Should().Throw<ArgumentNullException>();
     }
+
+    [Fact]
+    public void Failure_ShouldThrowArgumentException_WhitNoneError()
+    {
+        // Arrange
+        Error error = Error.None;
+
+        // Act
+        var act = () => Result<int>.Failure(error);
+
+        // Assert
+        act.Should().Throw<ArgumentException>();
+    }
 }
