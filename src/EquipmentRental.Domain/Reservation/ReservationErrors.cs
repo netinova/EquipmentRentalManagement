@@ -1,4 +1,4 @@
-using EquipmentRental.Domain.Common;
+using EquipmentRental.Domain.Abstractions;
 
 namespace EquipmentRental.Domain.Reservation;
 
@@ -24,4 +24,19 @@ public static class ReservationErrors
 
     public static readonly Error EndMustBeAfterStart =
         new("Reservation.EndMustBeAfterStart", "End date must be after start date.");
+
+    public static readonly Error ZeroReservationLines =
+        new("Reservation.ZeroReservationLines", "Reservation lines should be more than 0.");
+
+    public static readonly Error NotPendingStatus =
+        new("Reservation.NotPendingStatus", "Cannot confirm non pending reservation.");
+
+    public static readonly Error CannotCancelFulfilled =
+        new("Reservation.CannotCancelFulfilled", "Cannot cancel a fulfilled reservation.");
+
+    public static readonly Error AlreadyCancelled =
+        new("Reservation.AlreadyCancelled", "Cannot cancel an already cancelled reservation.");
+
+    public static readonly Error NotConfirmedStatus =
+        new("Reservation.NotConfirmedStatus", "Cannot fulfill non confirmed reservation.");
 }

@@ -1,4 +1,4 @@
-namespace EquipmentRental.Domain.Common;
+namespace EquipmentRental.Domain.Abstractions;
 
 public sealed class Result
 {

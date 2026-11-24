@@ -1,7 +1,7 @@
-using EquipmentRental.Domain.Common;
+using EquipmentRental.Domain.Abstractions;
 using FluentAssertions;
 
-namespace EquipmentRental.Domain.UnitTests.Common;
+namespace EquipmentRental.Domain.UnitTests.Abstractions;
 
 public class ResultOfTTests
 {

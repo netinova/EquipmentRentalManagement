@@ -1,4 +1,4 @@
-using EquipmentRental.Domain.Common;
+using EquipmentRental.Domain.Abstractions;
 using EquipmentRental.Domain.Product;
 
 namespace EquipmentRental.Domain.Reservation;

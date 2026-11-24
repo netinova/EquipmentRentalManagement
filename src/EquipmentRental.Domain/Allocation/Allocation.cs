@@ -1,9 +1,10 @@
+using EquipmentRental.Domain.Abstractions;
 using EquipmentRental.Domain.EquipmentUnit;
 using EquipmentRental.Domain.Reservation;
 
 namespace EquipmentRental.Domain.Allocation;
 
-internal sealed class Allocation
+internal sealed class Allocation : AggregateRoot
 {
     public AllocationId AllocationId { get; private set; }
     public EquipmentUnitId EquipmentUnitId { get; private set; }
