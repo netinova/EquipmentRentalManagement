@@ -481,4 +481,5 @@ $RECYCLE.BIN/
 # Vim temporary swap files
 *.swp
 
-specification.md
+IDEA.md
+cspell.json
