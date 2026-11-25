@@ -90,7 +90,6 @@ public sealed class Reservation : EventSourcedAggregateRoot, IReconstitutable<Re
             case ReservationFulfilled e:
                 Apply(e);
                 break;
-
             default:
                 throw new InvalidOperationException(
                     $"Unsupported event: {domainEvent.GetType().Name}");
