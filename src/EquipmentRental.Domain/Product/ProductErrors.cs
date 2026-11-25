@@ -30,4 +30,7 @@ public static class ProductErrors
 
     public static readonly Error ModelRequired =
         new("Product.ModelRequired", "Model is required.");
+
+    public static readonly Error HandlingNotesRequired =
+        new("Product.HandlingNotesRequired", "Handling notes are required.");
 }

@@ -17,7 +17,7 @@ public class Product : EventSourcedAggregateRoot, IReconstitutable<Product>
     public ProductModel Model { get; private set; } = null!;
     public RentAvailability RentAvailability { get; private set; } = null!;
     public RentalRate RentalRate { get; private set; } = null!;
-    public ProductHandlingNotes? HandlingNotes { get; private set; }
+    public ProductHandlingNotes HandlingNotes { get; private set; } = null!;
 
     private readonly List<EquipmentUnitId> _equipmentUnits = [];
 
@@ -35,7 +35,7 @@ public class Product : EventSourcedAggregateRoot, IReconstitutable<Product>
         product.RaiseAndApplyEvent(new ProductCreated(id, name, description, manufacturer, model,
             rentalRate,
             equipmentUnits ?? [],
-            handlingNotes));
+            handlingNotes ?? ProductHandlingNotes.Create(string.Empty).Value));
 
         return product;
     }

@@ -4,10 +4,15 @@ namespace EquipmentRental.Domain.Product;
 
 public sealed record ProductHandlingNotes
 {
-    public string? Notes { get; }
+    public string Notes { get; }
 
-    private ProductHandlingNotes(string? notes) => Notes = notes;
+    private ProductHandlingNotes(string notes) => Notes = notes;
 
     public static Result<ProductHandlingNotes> Create(string? notes)
-        => new ProductHandlingNotes(notes?.Trim());
+    {
+        if (notes is null)
+            return ProductErrors.HandlingNotesRequired;
+
+        return new ProductHandlingNotes(notes.Trim());
+    }
 }
