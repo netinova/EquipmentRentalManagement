@@ -9,7 +9,7 @@ public class ProductModelTests
     public void Create_ShouldSucceed_WithValidInput()
     {
         // Arrange
-        string model = "DCD791";
+        const string model = "DCD791";
 
         // Act
         var result = ProductModel.Create(model);
@@ -37,7 +37,7 @@ public class ProductModelTests
     public void Create_ShouldTrimModel_WithSurroundingWhiteSpaces()
     {
         // Arrange
-        string model = "  DCD791  ";
+        const string model = "  DCD791  ";
 
         // Act
         var result = ProductModel.Create(model);

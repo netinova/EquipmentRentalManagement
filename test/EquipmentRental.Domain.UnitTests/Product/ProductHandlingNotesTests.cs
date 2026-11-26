@@ -3,16 +3,16 @@ using FluentAssertions;
 
 namespace EquipmentRental.Domain.UnitTests.Product;
 
-public class ProductHandlingNotesTests
+public class HandlingNotesTests
 {
     [Fact]
     public void Create_ShouldSucceed_WithValidInput()
     {
         // Arrange
-        string notes = "Fragile - handle with care.";
+        const string notes = "Fragile - handle with care.";
 
         // Act
-        var result = ProductHandlingNotes.Create(notes);
+        var result = HandlingNotes.Create(notes);
 
         // Assert
         result.IsSuccess.Should().BeTrue();
@@ -23,10 +23,10 @@ public class ProductHandlingNotesTests
     public void Create_ShouldSucceed_WithEmptyString()
     {
         // Arrange
-        string notes = "";
+        const string notes = "";
 
         // Act
-        var result = ProductHandlingNotes.Create(notes);
+        var result = HandlingNotes.Create(notes);
 
         // Assert
         result.IsSuccess.Should().BeTrue();
@@ -38,7 +38,7 @@ public class ProductHandlingNotesTests
     public void Create_ShouldFail_WithInvalidInput(string? notes)
     {
         // Act
-        var result = ProductHandlingNotes.Create(notes);
+        var result = HandlingNotes.Create(notes);
 
         // Assert
         result.IsFailure.Should().BeTrue();
@@ -49,10 +49,10 @@ public class ProductHandlingNotesTests
     public void Create_ShouldTrimNotes_WithSurroundingWhiteSpaces()
     {
         // Arrange
-        string notes = "  Fragile - handle with care.  ";
+        const string notes = "  Fragile - handle with care.  ";
 
         // Act
-        var result = ProductHandlingNotes.Create(notes);
+        var result = HandlingNotes.Create(notes);
 
         // Assert
         result.IsSuccess.Should().BeTrue();

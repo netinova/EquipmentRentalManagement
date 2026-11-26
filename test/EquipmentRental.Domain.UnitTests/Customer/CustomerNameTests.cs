@@ -9,8 +9,8 @@ public class CustomerNameTests
     public void Create_ShouldSucceed_WithValidInput()
     {
         // Arrange
-        string firstName = "john";
-        string lastName = "smith";
+        const string firstName = "john";
+        const string lastName = "smith";
 
         // Act
         var result = CustomerName.Create(firstName, lastName);
@@ -28,7 +28,7 @@ public class CustomerNameTests
     public void Create_ShouldFail_WithInvalidFirstName(string? firstName)
     {
         // Arrange
-        string lastName = "smith";
+        const string lastName = "smith";
 
         // Act
         var result = CustomerName.Create(firstName, lastName);
@@ -45,7 +45,7 @@ public class CustomerNameTests
     public void Create_ShouldFail_WithNullLastName(string? lastName)
     {
         // Arrange
-        string firstName = "john";
+        const string firstName = "john";
 
         // Act
         var result = CustomerName.Create(firstName, lastName);
@@ -59,8 +59,8 @@ public class CustomerNameTests
     public void Create_ShouldTrimNames_WithSurroundingWhiteSpaces()
     {
         // Arrange
-        string firstName = "  john  ";
-        string lastName = "  smith  ";
+        const string firstName = "  john  ";
+        const string lastName = "  smith  ";
 
         // Act
         var result = CustomerName.Create(firstName, lastName);

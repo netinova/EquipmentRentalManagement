@@ -1,18 +1,18 @@
-using EquipmentRental.Domain.Abstractions;
+using EquipmentRental.Domain.Shared;
 
 namespace EquipmentRental.Domain.Product;
 
-public sealed record ProductHandlingNotes
+public sealed record HandlingNotes
 {
     public string Notes { get; }
 
-    private ProductHandlingNotes(string notes) => Notes = notes;
+    private HandlingNotes(string notes) => Notes = notes;
 
-    public static Result<ProductHandlingNotes> Create(string? notes)
+    public static Result<HandlingNotes> Create(string? notes)
     {
         if (notes is null)
             return ProductErrors.HandlingNotesRequired;
 
-        return new ProductHandlingNotes(notes.Trim());
+        return new HandlingNotes(notes.Trim());
     }
 }

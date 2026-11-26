@@ -9,8 +9,8 @@ public class RentalRateTests
     public void Create_ShouldSucceed_WithValidInput()
     {
         // Arrange
-        decimal rate = 25.00m;
-        PricingBasis pricingBasis = PricingBasis.Daily;
+        const decimal rate = 25.00m;
+        const PricingBasis pricingBasis = PricingBasis.Daily;
 
         // Act
         var result = RentalRate.Create(rate, pricingBasis);
@@ -25,7 +25,7 @@ public class RentalRateTests
     public void Create_ShouldFail_WithNullRate()
     {
         // Arrange
-        PricingBasis pricingBasis = PricingBasis.Daily;
+        const PricingBasis pricingBasis = PricingBasis.Daily;
 
         // Act
         var result = RentalRate.Create(null, pricingBasis);
@@ -39,8 +39,8 @@ public class RentalRateTests
     public void Create_ShouldFail_WithZeroRate()
     {
         // Arrange
-        decimal rate = 0m;
-        PricingBasis pricingBasis = PricingBasis.Daily;
+        const decimal rate = 0m;
+        const PricingBasis pricingBasis = PricingBasis.Daily;
 
         // Act
         var result = RentalRate.Create(rate, pricingBasis);
@@ -54,8 +54,8 @@ public class RentalRateTests
     public void Create_ShouldFail_WithNegativeRate()
     {
         // Arrange
-        decimal rate = -10m;
-        PricingBasis pricingBasis = PricingBasis.Daily;
+        const decimal rate = -10m;
+        const PricingBasis pricingBasis = PricingBasis.Daily;
 
         // Act
         var result = RentalRate.Create(rate, pricingBasis);
@@ -69,7 +69,7 @@ public class RentalRateTests
     public void Create_ShouldFail_WithNullPricingBasis()
     {
         // Arrange
-        decimal rate = 25.00m;
+        const decimal rate = 25.00m;
         PricingBasis? pricingBasis = null;
 
         // Act

@@ -143,7 +143,7 @@ public class ProductDomainTests
         {
             new ProductCreated(
                 id, _productName, _productDescription, _manufacturer, _model, _rentalRate, [],
-                ProductHandlingNotes.Create(string.Empty).Value)
+                HandlingNotes.Create(string.Empty).Value)
         };
 
         // Act
@@ -168,7 +168,7 @@ public class ProductDomainTests
         {
             new ProductCreated(
                 id, _productName, _productDescription, _manufacturer, _model, _rentalRate, [],
-                ProductHandlingNotes.Create(string.Empty).Value),
+                HandlingNotes.Create(string.Empty).Value),
             new ProductRentalDisabled(id)
         };
 
@@ -188,7 +188,7 @@ public class ProductDomainTests
         {
             new ProductCreated(
                 id, _productName, _productDescription, _manufacturer, _model, _rentalRate, [],
-                ProductHandlingNotes.Create(string.Empty).Value),
+                HandlingNotes.Create(string.Empty).Value),
             new ProductRentalDisabled(id),
             new ProductRentalEnabled(id)
         };
@@ -209,7 +209,7 @@ public class ProductDomainTests
         {
             new ProductCreated(
                 id, _productName, _productDescription, _manufacturer, _model, _rentalRate, [],
-                ProductHandlingNotes.Create(string.Empty).Value),
+                HandlingNotes.Create(string.Empty).Value),
             new ProductRentalDisabled(id)
         };
 

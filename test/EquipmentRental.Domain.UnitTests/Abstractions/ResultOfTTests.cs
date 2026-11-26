@@ -1,4 +1,4 @@
-using EquipmentRental.Domain.Abstractions;
+using EquipmentRental.Domain.Shared;
 using FluentAssertions;
 
 namespace EquipmentRental.Domain.UnitTests.Abstractions;
@@ -9,7 +9,7 @@ public class ResultOfTTests
     public void Success_ShouldContainValue_WhenExpectingSuccessfulResult()
     {
         // Arrange
-        int expected = 42;
+        const int expected = 42;
 
         // Act
         var result = Result<int>.Success(expected);

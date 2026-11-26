@@ -1,4 +1,4 @@
-namespace EquipmentRental.Domain.Abstractions;
+namespace EquipmentRental.Domain.Shared;
 
 public sealed record Error(string Code, string Description)
 {

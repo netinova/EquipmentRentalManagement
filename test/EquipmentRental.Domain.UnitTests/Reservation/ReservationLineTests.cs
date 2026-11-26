@@ -11,7 +11,7 @@ public class ReservationLineTests
     {
         // Arrange
         var productId = ProductId.Create(Guid.NewGuid()).Value;
-        uint quantity = 1;
+        const uint quantity = 1;
 
         // Act
         var result = ReservationLine.Create(productId, quantity);
@@ -27,7 +27,7 @@ public class ReservationLineTests
     {
         // Arrange
         ProductId? productId = null;
-        uint quantity = 5;
+        const uint quantity = 5;
 
         // Act
         var result = ReservationLine.Create(productId, quantity);

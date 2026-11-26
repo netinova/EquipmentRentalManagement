@@ -2,6 +2,7 @@ using EquipmentRental.Domain.Abstractions;
 using EquipmentRental.Domain.Branch;
 using EquipmentRental.Domain.Customer;
 using EquipmentRental.Domain.Reservation.Events;
+using EquipmentRental.Domain.Shared;
 
 namespace EquipmentRental.Domain.Reservation;
 

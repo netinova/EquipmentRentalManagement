@@ -1,5 +1,4 @@
-using EquipmentRental.Domain.Abstractions;
-
+using EquipmentRental.Domain.Shared;
 
 namespace EquipmentRental.Domain.Product;
 

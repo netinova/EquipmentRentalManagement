@@ -9,7 +9,7 @@ public class ProductDescriptionTests
     public void Create_ShouldSucceed_WithValidInput()
     {
         // Arrange
-        string description = "A high-quality camera.";
+        const string description = "A high-quality camera.";
 
         // Act
         var result = ProductDescription.Create(description);
@@ -51,7 +51,7 @@ public class ProductDescriptionTests
     public void Create_ShouldTrimDescription_WithSurroundingWhiteSpaces()
     {
         // Arrange
-        string description = "  A high-quality power drill.  ";
+        const string description = "  A high-quality power drill.  ";
 
         // Act
         var result = ProductDescription.Create(description);

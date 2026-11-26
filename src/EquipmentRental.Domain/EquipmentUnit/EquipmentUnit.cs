@@ -7,6 +7,7 @@ public sealed class EquipmentUnit
 {
     public EquipmentUnitId Id { get; private set; }
     public ProductId ProductId { get; private set; }
+    public SerialNumber SerialNumber { get; private set; }
     public BranchId BranchId { get; private set; }
     public OperationalStatus OperationalStatus { get; private set; }
 }

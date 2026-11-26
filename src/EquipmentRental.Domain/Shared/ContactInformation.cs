@@ -1,4 +1,4 @@
-namespace EquipmentRental.Domain.Branch;
+namespace EquipmentRental.Domain.Shared;
 
 public sealed record ContactInformation
 {

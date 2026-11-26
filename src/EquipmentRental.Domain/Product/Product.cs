@@ -1,10 +1,11 @@
 using EquipmentRental.Domain.Abstractions;
 using EquipmentRental.Domain.EquipmentUnit;
 using EquipmentRental.Domain.Product.Events;
+using EquipmentRental.Domain.Shared;
 
 namespace EquipmentRental.Domain.Product;
 
-public class Product : EventSourcedAggregateRoot, IReconstitutable<Product>
+public sealed class Product : EventSourcedAggregateRoot, IReconstitutable<Product>
 {
     private Product()
     {
@@ -17,7 +18,7 @@ public class Product : EventSourcedAggregateRoot, IReconstitutable<Product>
     public ProductModel Model { get; private set; } = null!;
     public RentAvailability RentAvailability { get; private set; } = null!;
     public RentalRate RentalRate { get; private set; } = null!;
-    public ProductHandlingNotes HandlingNotes { get; private set; } = null!;
+    public HandlingNotes HandlingNotes { get; private set; } = null!;
 
     private readonly List<EquipmentUnitId> _equipmentUnits = [];
 
@@ -26,7 +27,7 @@ public class Product : EventSourcedAggregateRoot, IReconstitutable<Product>
     public static Result<Product> Create(ProductName name, ProductDescription description,
         ProductManufacturer manufacturer, ProductModel model, RentalRate rentalRate,
         IReadOnlyCollection<EquipmentUnitId>? equipmentUnits = null,
-        ProductHandlingNotes? handlingNotes = null)
+        HandlingNotes? handlingNotes = null)
     {
         var product = new Product();
 
@@ -35,7 +36,7 @@ public class Product : EventSourcedAggregateRoot, IReconstitutable<Product>
         product.RaiseAndApplyEvent(new ProductCreated(id, name, description, manufacturer, model,
             rentalRate,
             equipmentUnits ?? [],
-            handlingNotes ?? ProductHandlingNotes.Create(string.Empty).Value));
+            handlingNotes ?? HandlingNotes.Create(string.Empty).Value));
 
         return product;
     }

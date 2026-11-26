@@ -1,5 +1,6 @@
 using EquipmentRental.Domain.Abstractions;
 using EquipmentRental.Domain.Branch.Events;
+using EquipmentRental.Domain.Shared;
 
 namespace EquipmentRental.Domain.Branch;
 

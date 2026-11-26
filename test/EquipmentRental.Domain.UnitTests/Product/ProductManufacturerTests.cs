@@ -9,7 +9,7 @@ public class ProductManufacturerTests
     public void Create_ShouldSucceed_WithValidInput()
     {
         // Arrange
-        string manufacturer = "Sony";
+        const string manufacturer = "Sony";
 
         // Act
         var result = ProductManufacturer.Create(manufacturer);
@@ -37,7 +37,7 @@ public class ProductManufacturerTests
     public void Create_ShouldTrimManufacturer_WithSurroundingWhiteSpaces()
     {
         // Arrange
-        string manufacturer = "  Sony  ";
+        const string manufacturer = "  Sony  ";
 
         // Act
         var result = ProductManufacturer.Create(manufacturer);

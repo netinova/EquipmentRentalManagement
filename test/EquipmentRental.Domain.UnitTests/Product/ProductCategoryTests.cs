@@ -9,7 +9,7 @@ public class ProductCategoryTests
     public void Create_ShouldSucceed_WithValidInput()
     {
         // Arrange
-        string category = "Power Tools";
+        const string category = "Power Tools";
 
         // Act
         var result = ProductCategory.Create(category);
@@ -37,7 +37,7 @@ public class ProductCategoryTests
     public void Create_ShouldTrimCategory_WithSurroundingWhiteSpaces()
     {
         // Arrange
-        string category = "  Power Tools  ";
+        const string category = "  Power Tools  ";
 
         // Act
         var result = ProductCategory.Create(category);

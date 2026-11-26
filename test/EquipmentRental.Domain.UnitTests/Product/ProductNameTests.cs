@@ -9,7 +9,7 @@ public class ProductNameTests
     public void Create_ShouldSucceed_WithValidInput()
     {
         // Arrange
-        string name = "abc";
+        const string name = "abc";
 
         // Act
         var result = ProductName.Create(name);
@@ -37,7 +37,7 @@ public class ProductNameTests
     public void Create_ShouldTrimName_WithSurroundingWhiteSpaces()
     {
         // Arrange
-        string name = "  abc  ";
+        const string name = "  abc  ";
 
         // Act
         var result = ProductName.Create(name);

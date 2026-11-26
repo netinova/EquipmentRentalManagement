@@ -1,4 +1,4 @@
-using EquipmentRental.Domain.Abstractions;
+using EquipmentRental.Domain.Shared;
 
 namespace EquipmentRental.Domain.Customer;
 
@@ -21,10 +21,9 @@ public sealed record CustomerName
         if (string.IsNullOrWhiteSpace(lastName))
             return CustomerErrors.LastNameRequired;
 
-
         firstName = firstName.Trim();
         lastName = lastName.Trim();
 
-        return new CustomerName(firstName, lastName);
+        return new CustomerName(firstName.Trim(), lastName.Trim());
     }
 }

@@ -1,4 +1,4 @@
-using EquipmentRental.Domain.Abstractions;
+using EquipmentRental.Domain.Shared;
 using FluentAssertions;
 
 namespace EquipmentRental.Domain.UnitTests.Abstractions;

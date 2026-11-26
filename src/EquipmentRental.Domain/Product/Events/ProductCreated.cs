@@ -11,7 +11,7 @@ public sealed record ProductCreated(
     ProductModel Model,
     RentalRate RentalRate,
     IReadOnlyCollection<EquipmentUnitId> EquipmentUnits,
-    ProductHandlingNotes HandlingNotes) : IDomainEvent
+    HandlingNotes HandlingNotes) : IDomainEvent
 {
     public DateTime OccurredOn { get; } = DateTime.UtcNow;
     public Guid StreamId => Id.Id;
